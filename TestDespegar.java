@@ -1,0 +1,85 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class TestDespegar {
+  @Test(description = "Validar Despegar")
+  public void PruebaDespegar() throws Exception {
+	  System.setProperty("webdriver.chrome.driver", "C:/driver/chromedriver.exe");  
+	  WebDriver driver = new ChromeDriver();
+	  driver.get("https://www.despegar.com.ar/");
+	  //driver.manage().window().maximize();
+	  WebElement searchLogo = driver.findElement(By.id("logo-desktop"));
+	  Assert.assertTrue(searchLogo.isDisplayed(), "NO HAY LOGO DISPONIBLE");
+	  //WebElement Btn_Alojamiento= driver.findElement(By.xpath("//*[@class='header-products-container']//*[@class='shifu-3-button-circle HOTELS paint-circle ']"));
+	  WebElement Btn_Alojamiento = driver.findElement(By.xpath("//*[@class='shifu-icon-product shifu-3-icon-hotels']"));
+	  //Thread.sleep(2000);
+	  WebDriverWait wait = new WebDriverWait(driver, 30);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='shifu-icon-product shifu-3-icon-hotels']")));
+	  Btn_Alojamiento.click();
+	  Assert.assertTrue(Btn_Alojamiento.isDisplayed(),"NO HAY BOTON ALOJAMIENTO");
+	  WebElement text_Ciudad = driver.findElement(By.xpath("//*[@class='sbox5-3-input sbox5-3-validation -top-right -lg -icon-left']//*[@placeholder='Ingresá una ciudad, alojamiento o punto de interés']"));
+	  text_Ciudad.click();
+	  text_Ciudad.sendKeys("Cordoba,");
+	  Thread.sleep(500);
+	  //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='sbox5-3-input sbox5-3-validation -top-right -lg -icon-left']//*[@placeholder='Ingresá una ciudad, alojamiento o punto de interés']")));
+	  text_Ciudad.sendKeys(Keys.CONTROL);
+	  Thread.sleep(500);
+	  text_Ciudad.sendKeys(Keys.ENTER);
+	  Thread.sleep(500);
+	  WebElement btn_EntendiCookie = driver.findElement(By.xpath("//*[@class='lgpd-banner--button eva-3-btn -white -md']"));
+	  btn_EntendiCookie.click();
+	  WebElement fecha_entrada = driver.findElement(By.xpath("//*[@class='input-container']//*[@placeholder='Entrada']"));
+	  fecha_entrada.click();
+	  Thread.sleep(1000);
+	  //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='input-container']//*[@placeholder='Entrada']")));
+	  WebElement fecha_inicio = driver.findElement(By.xpath("//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-datenumber sbox5-monthgrid-datenumber-30 -today']"));
+	  //*[@class='sbox5-monthgrid-datenumber sbox5-monthgrid-datenumber-29 -weekday -today']"));
+	  fecha_inicio.click();
+	  //Thread.sleep(2000);
+	  //WebElement fecha_fin = driver.findElement(By.xpath("//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-31']//*[@class='sbox5-monthgrid-datenumber-number'][text()='27']"));
+	    WebElement fecha_fin = driver.findElement(By.xpath("//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-30']//*[@class='sbox5-monthgrid-datenumber']//*[@class='sbox5-monthgrid-datenumber-number'][text()='9']"));
+	    //*[@class='sbox5-monthgrid-datenumber sbox5-monthgrid-datenumber-28 -weekday']//*[@class='sbox5-monthgrid-datenumber-number'][text()='28']"));
+	  fecha_fin.click();
+	  WebElement btn_aplicar = driver.findElement(By.xpath("//*[@class='sbox5-3-btn -primary -md']"));
+	  btn_aplicar.click();
+	  WebElement habitaciones = driver.findElement(By.xpath("//*[@class='sbox5-3-double-input']"));
+	  //Thread.sleep(2000);
+	  habitaciones.click();
+	  Thread.sleep(2000);
+	  //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='sbox5-3-double-input']")));
+	  List <WebElement> lista_sumar_adulto = driver.findElements(By.xpath("//*[@class='stepper__distribution_container']//*[@class='steppers-icon-right stepper__icon']"));
+	  WebElement sumar_adulto = lista_sumar_adulto.get(2);
+	  sumar_adulto.click();
+	  List <WebElement> lista_sumar_menor = driver.findElements(By.xpath("//*[@class='stepper__distribution_container']//*[@class='steppers-icon-right stepper__icon']"));
+	  WebElement sumar_menor = lista_sumar_menor.get(3);
+	  sumar_menor.click();
+	  WebElement selecciona_edad_menor = driver.findElement(By.xpath("//*[@class='stepper__distribution_container']//*[@class='select-container']//*[@class='select-option'][text()='3 años']"));
+	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='stepper__distribution_container']//*[@class='select-container']//*[@class='select-option'][text()='3 años']")));
+	  selecciona_edad_menor.click();
+	  WebElement btn_aplicar_huesped = driver.findElement(By.xpath("//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='stepper__room__footer ']//*[@class='sbox5-3-btn -md -primary']//*[@class='btn-text']"));
+	  btn_aplicar_huesped.click();
+	  WebElement btn_buscar = driver.findElement(By.xpath("//*[@class='sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg']"));
+	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg']")));
+      //visibilityOfElementLocated(By.xpath("//*[@class='sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg']")));
+	  btn_buscar.click();
+	  WebElement ventana_emergente = driver.findElement(By.xpath("//*[@class='tooltip-close eva-3-icon-close']"));
+	  //Thread.sleep(1000);
+	  ventana_emergente.click();
+	  WebElement hotel_encontrado = driver.findElement(By.xpath("//*[@class='accommodation-name-wrapper']//*[@class='accommodation-name -eva-3-ellipsis'][text()='Savannah Cordoba Hotel']"));
+	  //hotel_encontrado.click();
+	  //WebElement check_hotel = driver.findElement(By.xpath("//*[@class='btn-text'][text()='Reservar ahora']"));
+	  //Thread.sleep(1000);
+	  Assert.assertTrue(hotel_encontrado.isDisplayed(), "EL HOTEL NO SE ENCUENTRA DISPONIBLE");
+	  Thread.sleep(2000);
+	  driver.quit();
+  }
+}
