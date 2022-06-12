@@ -16,7 +16,7 @@ public class WikiPortada extends DriverFactory {
   public void ValidarBusquedaWikipediaPortada() throws Exception {
 	  
 	  WebDriver driver = null;
-	  driver = DriverFactory.LevantarBrowser(driver, "CHROME", "https://es.wikipedia.org/wiki/Wikipedia:Portada");
+	  driver = DriverFactory.LevantarBrowser("CHROME", "https://es.wikipedia.org/wiki/Wikipedia:Portada");
 	  pageHome objPageHome = new pageHome(driver);
 	  Assert.assertTrue(objPageHome.searchInputEsVisible(), "El input no esta visible");
 	  
