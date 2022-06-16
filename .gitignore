@@ -1,0 +1,6 @@
+/.settings
+.project
+.classpath
+/.git
+/test-output
+/target/

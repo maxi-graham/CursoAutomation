@@ -22,7 +22,6 @@ public class TestDespegar extends DriverFactory {
   public void abrir(ITestContext context) {
 	  String url = "https://www.despegar.com.ar/";
 	  String navegadorTestSuite = context.getCurrentXmlTest().getParameter("Navegador");
-	  
 	  //toma por defecto CHROME, si la variable es = a null
 	  String navegador = navegadorTestSuite != null ? navegadorTestSuite : "CHROME";
 	  //driver =  LevantarBrowser("CHROME", "https://www.despegar.com.ar/");
@@ -32,8 +31,8 @@ public class TestDespegar extends DriverFactory {
   
   @DataProvider(name="ciudades")
   public Object[][] providerCiudades(){
-	  return new Object[][] {{"Salta"}, {"Rio Negro"}, {"Bariloche"}};
-  }
+	  return new Object[][] {{"Salta"}};
+  }//, {"Rio Negro"}, {"Bariloche"}
   
   @Test(groups= {"grupo1"},dataProvider= "ciudades", description = "Validar_Despegar")
   public void PruebaDespegar(String searchText) throws Exception {	  

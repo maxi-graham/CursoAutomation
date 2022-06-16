@@ -30,7 +30,7 @@ public class DriverFactory {
 		}
 		}
 		driver.get(URL);
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		return driver;
 	}
 	

@@ -17,11 +17,13 @@ public class despegarAlojamientopage {
 	WebElement text_Ciudad;
 	@FindBy(xpath="//*[@class='ac-group-title eva-3-overline-2'][text()='Ciudades']")
 	WebElement cuadro_ciudades;
-	@FindBy(xpath="//*[@class='shifu-icon-product shifu-3-icon-hotels']")
+	//@FindBy(xpath="//*[@class='shifu-icon-product shifu-3-icon-hotels']")
+	@FindBy(css="i.shifu-icon-product shifu-3-icon-hotels")
 	WebElement btn_Alojamiento;
 	@FindBy(xpath="//*[@class='input-container']//*[@placeholder='Entrada']")
 	WebElement calendario;
 	@FindBy(xpath="//*[@class='lgpd-banner--button eva-3-btn -white -md']")
+	//@FindBy(css="a.lgpd-banner--button eva-3-btn -white -md")
 	WebElement btn_EntendiCookie;
 	@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-31']//*[@class='sbox5-monthgrid-datenumber-number'][text()='18']")
 	WebElement fecha_inicio;
@@ -29,8 +31,10 @@ public class despegarAlojamientopage {
 	@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-31']//*[@class='sbox5-monthgrid-datenumber-number'][text()='29']")
 	WebElement fecha_fin;
 	@FindBy(xpath="//*[@class='sbox5-3-btn -primary -md']")
+	//@FindBy(css="button.sbox5-3-btn -primary -md")
 	WebElement btn_aplicar;
-	@FindBy(xpath="//*[@class='sbox5-3-double-input']")
+	//@FindBy(xpath="//*[@class='sbox5-3-double-input']")
+	@FindBy(css="div.sbox5-3-double-input")
 	WebElement habitaciones;
 	@FindBy(xpath="//*[@class='stepper__distribution_container']//*[@class='steppers-icon-right stepper__icon']")
 	List <WebElement> lista_sumar_adulto;
@@ -41,8 +45,10 @@ public class despegarAlojamientopage {
 	@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='stepper__room__footer ']//*[@class='sbox5-3-btn -md -primary']//*[@class='btn-text']")
 	WebElement btn_aplicar_huesped;
 	@FindBy(xpath="//*[@class='sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg']")
+	//@FindBy(css="button.sbox5-box-button-ovr sbox5-3-btn -secondary -icon -lg")
 	WebElement btn_buscar;
-	@FindBy(xpath="//*[@class='tooltip-close eva-3-icon-close']")
+	//@FindBy(xpath="//*[@class='tooltip-close eva-3-icon-close']")
+	@FindBy(css="i.tooltip-close eva-3-icon-close")
 	WebElement ventana_emergente;
 	@FindBy(xpath="//*[@class='login-incentive shifu-3-card -shifu-3-shadow-static -show']//*[@class='login-incentive--header']//*[@class='login-incentive--close shifu-3-icon-close -eva-3-mr-md']")
 	WebElement btn_facebook;

@@ -24,7 +24,7 @@ public class testLista extends DriverFactory {
 		  
 	  }
 	  
-	  @Test(description = "Validar_Lista_Despegar")
+	  @Test(groups= {"grupo1ListaDespegar"},description = "Validar_Lista_Despegar")
 	  public void validarListaHome() {
 		  despegarHomepage objhome = new despegarHomepage (driver);
 		  objhome.validarListaMenu();
