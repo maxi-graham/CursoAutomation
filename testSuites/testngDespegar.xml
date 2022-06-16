@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteDespegar">
+  <test thread-count="5" name="TestDespegar">
+    <classes>
+      <class name="test.TestDespegar"/>
+    </classes>
+  </test> <!-- TestDespegar -->
+</suite> <!-- SuiteDespegar -->

@@ -23,9 +23,10 @@ public class despegarAlojamientopage {
 	WebElement calendario;
 	@FindBy(xpath="//*[@class='lgpd-banner--button eva-3-btn -white -md']")
 	WebElement btn_EntendiCookie;
-	@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-30']//*[@class='sbox5-monthgrid-datenumber-number'][text()='13']")
+	@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-31']//*[@class='sbox5-monthgrid-datenumber-number'][text()='18']")
 	WebElement fecha_inicio;
-	@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid sbox5-compact-view']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-30']//*[@class='sbox5-monthgrid-datenumber-number'][text()='17']")
+	//@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid sbox5-compact-view']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-30']//*[@class='sbox5-monthgrid-datenumber-number'][text()='29']")
+	@FindBy(xpath="//*[@class='sbox5-floating-tooltip sbox5-floating-tooltip-opened']//*[@class='sbox5-monthgrid-dates sbox5-monthgrid-dates-31']//*[@class='sbox5-monthgrid-datenumber-number'][text()='29']")
 	WebElement fecha_fin;
 	@FindBy(xpath="//*[@class='sbox5-3-btn -primary -md']")
 	WebElement btn_aplicar;
@@ -43,9 +44,9 @@ public class despegarAlojamientopage {
 	WebElement btn_buscar;
 	@FindBy(xpath="//*[@class='tooltip-close eva-3-icon-close']")
 	WebElement ventana_emergente;
-	@FindBy(xpath="//*[@class='accommodation-name-wrapper']//*[@class='accommodation-name -eva-3-ellipsis'][text()='Savannah Cordoba Hotel']")
-	WebElement hotel_encontrado;
-			
+	@FindBy(xpath="//*[@class='login-incentive shifu-3-card -shifu-3-shadow-static -show']//*[@class='login-incentive--header']//*[@class='login-incentive--close shifu-3-icon-close -eva-3-mr-md']")
+	WebElement btn_facebook;
+	
 	private WebDriver driver=null;
 	WebDriverWait wait;
 	//----------------------------------------------------------------
@@ -61,6 +62,7 @@ public class despegarAlojamientopage {
 	
 	public void text_Ciudad (String text) throws InterruptedException {
 		this.text_Ciudad.sendKeys(text);
+		Thread.sleep(1000);
 		this.text_Ciudad.sendKeys(Keys.CONTROL);
 		wait.until(ExpectedConditions.visibilityOf(this.cuadro_ciudades));
 		this.text_Ciudad.sendKeys(Keys.ENTER);
@@ -94,7 +96,13 @@ public class despegarAlojamientopage {
 		this.btn_aplicar.click();
 	}
 	
+	public void cierraVentafacebook() {
+		this.btn_facebook.click();
+	}
+	
 	public void habitacionesClick() {
+		cierraVentafacebook();
+		wait.until(ExpectedConditions.elementToBeClickable(this.habitaciones));
 		this.habitaciones.click();
 	}
 	

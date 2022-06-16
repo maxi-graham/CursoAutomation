@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SuiteWiki">
-<parameter name="Navegador" value="CHORME"></parameter>
+<suite name="Suite">
+	<parameter name="Navegador" value="CHROME"></parameter>
   <test thread-count="5" name="Test">
-  	<groups>
-  		<run>
-  			<include name="Regristrar Alojamiento"></include>
-  			<include name="Validar pagina Wiki"></include>
-  		</run>
-  	</groups>
-  <classes>
-  	<class name="com.selenium.pages."></class>
-  </classes>
+  <groups>
+  	<run>
+  		<include name="grupo1"></include>
+  		<!--<include name="grupo1wiki"></include>
+		<include name="grupo1ListaDespegar"></include>-->
+  	</run>
+  </groups>
+    <classes>
+      <class name="test.TestDespegar"/>
+      <class name="test.testLista"/>
+      <class name="test.WikiPortada"></class>
+    </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

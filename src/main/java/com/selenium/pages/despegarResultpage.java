@@ -12,8 +12,8 @@ public class despegarResultpage {
 
 	@FindBy(xpath="//*[@class='tooltip-close eva-3-icon-close']")
 	WebElement ventana_emergente;
-	@FindBy(xpath="//*[@class='accommodation-name-wrapper']//*[@class='accommodation-name -eva-3-ellipsis'][text()='Savannah Cordoba Hotel']")
-	WebElement hotel_encontrado;
+	@FindBy(xpath="//*[@class='-eva-3-icon-md eva-3-icon-rentals -eva-3-mr-sm']")
+	WebElement resultado_hotel;
 	
 	
 	private WebDriver driver=null;
@@ -30,7 +30,7 @@ public class despegarResultpage {
 	}
 	
 	public boolean hotel_encontrado_visible() {
-		return this.hotel_encontrado.isDisplayed();
+		return this.resultado_hotel.isDisplayed();
 	}
 	
 }

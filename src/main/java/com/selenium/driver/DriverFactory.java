@@ -3,7 +3,6 @@ package com.selenium.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
 
 public class DriverFactory {
 	
@@ -31,12 +30,11 @@ public class DriverFactory {
 		}
 		}
 		driver.get(URL);
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		return driver;
 	}
 	
-	@AfterMethod
 	public static void cerrarBrowser (WebDriver driver) {
-		driver.close();
+		driver.quit();
 	}
 }

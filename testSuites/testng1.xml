@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="Navegador" value="CHROME"></parameter>
+  <test thread-count="1" name="TestWiki">
+  	<groups>
+  		<run>
+  			<include name="grupo1"></include>
+  		</run>
+  	</groups>
+  <classes>
+  	<class name="com.selenium.test.TestDespegar.java"></class>
+  	<class name="com.selenium.test.WikiPortada.java"></class>
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
